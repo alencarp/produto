@@ -20,10 +20,13 @@ public class Produto {
     private Long id;
     private String nome;
     private BigDecimal preco;
+    @Enumerated(EnumType.STRING)
+    private Categoria categoria;
 
     public Produto(ProdutoRequestDTO produtoRequestDTO) {
         this.nome = produtoRequestDTO.nome();
         this.preco = produtoRequestDTO.preco();
+        this.categoria = produtoRequestDTO.categoria();
     }
 
 }
